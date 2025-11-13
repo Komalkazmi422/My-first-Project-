@@ -1,0 +1,57 @@
+// Interface for Cloud Hosting Provider
+interface CloudHostingProvider {
+    void createServer(String region);
+    void listServers(String region);
+}
+
+// Interface for Content Delivery Network (CDN) Provider
+interface CDNProvider {
+    String getCDNAddress();
+}
+
+// Interface for Cloud Storage Provider
+interface CloudStorageProvider {
+    void storeFile(String name);
+    void getFile(String name);
+}
+
+// Amazon implements multiple smaller interfaces
+class Amazon implements CloudHostingProvider, CDNProvider, CloudStorageProvider {
+    @Override
+    public void createServer(String region) {
+        System.out.println("Amazon: Server created in region " + region);
+    }
+
+    @Override
+    public void listServers(String region) {
+        System.out.println("Amazon: Listing servers in region " + region);
+    }
+
+    @Override
+    public String getCDNAddress() {
+        return "Amazon CDN Address";
+    }
+
+    @Override
+    public void storeFile(String name) {
+        System.out.println("Amazon: Storing file " + name);
+    }
+
+    @Override
+    public void getFile(String name) {
+        System.out.println("Amazon: Retrieving file " + name);
+    }
+}
+
+// Dropbox only provides Cloud Storage
+class Dropbox implements CloudStorageProvider {
+    @Override
+    public void storeFile(String name) {
+        System.out.println("Dropbox: Storing file " + name);
+    }
+
+    @Override
+    public void getFile(String name) {
+        System.out.println("Dropbox: Retrieving file " + name);
+    }
+}
