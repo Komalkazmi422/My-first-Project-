@@ -1,0 +1,13 @@
+public class CloudServiceDemo {
+    public static void main(String[] args) {
+        Amazon amazon = new Amazon();
+        amazon.createServer("Asia");
+        amazon.storeFile("project.docx");
+        amazon.getFile("project.docx");
+        System.out.println("CDN Address: " + amazon.getCDNAddress());
+
+        Dropbox dropbox = new Dropbox();
+        dropbox.storeFile("notes.pdf");
+        dropbox.getFile("notes.pdf");
+    }
+}
