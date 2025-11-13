@@ -1,0 +1,11 @@
+public class Main {
+    public static void main(String[] args) {
+        // Combustion engine with human driver
+        Transport truck = new Transport(new CombustionEngine(), new Human());
+        truck.deliver("Karachi", "Electronics");
+
+        // Electric engine with robot driver
+        Transport ev = new Transport(new ElectricEngine(), new Robot());
+        ev.deliver("Lahore", "Medical Supplies");
+    }
+}
