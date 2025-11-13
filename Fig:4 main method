@@ -1,0 +1,9 @@
+public class Main {
+    public static void main(String[] args) {
+        Order order1 = new Order(800, 20, new Ground());
+        Order order2 = new Order(1500, 30, new Air());
+
+        order1.showSummary();
+        order2.showSummary();
+    }
+}
